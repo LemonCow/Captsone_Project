@@ -859,14 +859,6 @@ def update_config():
             """
             return No_attack
 
-    #elif request.method == 'GET':
-
-     #   oof = request.args.get('page')
-      #  if oof:
-       #     return render_page(oof)
-
-
-
 if __name__ == "__main__":
 
     CORS(app)
