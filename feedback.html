@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <style>
+        header {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            font-size: 2em;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            box-shadow:  0  2px  4px rgba(0,  0,  0,  0.1); /* Shadow for depth *//
+        }
+    
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+        }
+    
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+
+        }
+    
+        form {
+            display: flex;
+            background-color: #f3f3f3;
+            border:  1px solid #ced4da; /* Light grey border */
+            border-radius:  5px; /* Slight rounding on corners */
+            padding: 20px;
+            margin: 20px;
+            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #feedbackBox {
+            display: flex;
+            background-color: #f3f3f3;
+            border: solid 2px #333;
+            padding: 20px;
+            margin: 20px;
+            margin-bottom: 10px;
+            width: 80%;
+            overflow: auto;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #b8a468; /* Use a more muted background color */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+
+        }
+
+        .navbar {
+    width:  100%;
+    background-color: #452f69; /* Set the background color here */
+    position: fixed; /* Optional: Use this if you want the navbar to stay at the top */
+    top:  0;
+    left:  0;
+    z-index:  2;
+}
+
+.navbar ul {
+    padding:  0;
+    margin:  0;
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline-block; /* Display list items horizontally */
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding:  14px  16px;
+    text-decoration: none;
+    background-color: transparent; /* Make sure the background is transparent */
+    transition: background-color  0.3s ease; /* Smooth hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #333;
+}
+
+.radio-container {
+        display: flex;
+        gap:  10px; /* Optional: adds space between the radio buttons */
+  }
+
+  #noReasonContainer {
+    display: none; /* Initially hide the container */
+}
+@media screen and (max-width:  930px) {
+    body {
+        padding-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+    h1 {
+        margin-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+}
+
+    </style>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul id="menuBar">
+                    <li><a href="https://www.savi-scanneronline.com/interface.html">Home</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/about.html">About</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/documentation.html">Documentation</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/creators.html">Creators</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>We Want To Hear From You</h1>
+    <p>Please provide us any feedback by answering the questions below. This isn't required but we would greatly appreciate it!</p>
+    <form id = "feedbackForm" action="https://www.savi-scanneronline.com/submit_feedback.php" method="POST"> 
+        <label for="username">Your Name:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <p>Did you find the scanner helpful?</p>
+
+        <div class="radio-container">
+            <input type="radio" id="yes1" name="agree1" value="yes" onclick="toggleReasonField1();">
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no1" name="agree1" value="no" onclick="toggleReasonField1();">
+            <label for="no">No</label><br>
+            <div id="noReasonContainer1" style="display:none;">
+                <label for="noReason">Please specify the reason:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+          </div>
+        </div>
+       
+
+        <p>Did you find the scanner easier than other scanners?</p>
+
+        <div class="radio-container">
+            <input type="radio" id="yes2" name="agree2" value="yes" onclick="toggleReasonField2();">
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no2" name="agree2" value="no" onclick="toggleReasonField2();">
+            <label for="no">No</label><br>
+            <div id="noReasonContainer2" style="display:none;">
+                <label for="noReason">Please specify the reason:</label>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+          </div>
+        </div>
+
+        <label for="Suggestions">Provide any additional suggestion that you have for our scanner:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+    <script>
+    function toggleReasonField1() {
+    var noReasonContainer = document.getElementById('noReasonContainer1');
+    if (document.getElementById('yes1').checked) {
+        noReasonContainer.style.display = 'none'; // Hide the container by default
+    }
+    if (document.getElementById('no1').checked) {
+        noReasonContainer.style.display = 'block'; // Show the container if "no" is selected
+    }
+}
+function toggleReasonField2() {
+    var noReasonContainer = document.getElementById('noReasonContainer2');
+    if (document.getElementById('yes2').checked) {
+        noReasonContainer.style.display = 'none'; // Hide the container by default
+    }
+    if (document.getElementById('no2').checked) {
+        noReasonContainer.style.display = 'block'; // Show the container if "no" is selected
+    } else {
+        noReasonContainer.style.display = 'none'; // Hide the container otherwise
+    }
+}
+
+    </script>
+</body>
+</html>

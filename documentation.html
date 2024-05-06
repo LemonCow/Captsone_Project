@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How To Use</title>
+    <style>
+        header {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            font-size: 2em;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            box-shadow:  0  2px  4px rgba(0,  0,  0,  0.1); /* Shadow for depth *//
+        }
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+        }
+    
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+
+        }
+        #definitionsBox {
+            display: flex;
+            background-color: #f3f3f3;
+            border: solid 2px #333;
+            padding: 20px;
+            margin: 20px;
+            width: 80%;
+            overflow: auto;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: large;
+
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #b8a468; /* Use a more muted background color */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+
+        }
+
+        .navbar {
+    width:  100%;
+    background-color: #452f69; /* Set the background color here */
+    position: fixed; /* Optional: Use this if you want the navbar to stay at the top */
+    top:  0;
+    left:  0;
+    z-index:  2;
+}
+
+.navbar ul {
+    padding:  0;
+    margin:  0;
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline-block; /* Display list items horizontally */
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding:  14px  16px;
+    text-decoration: none;
+    background-color: transparent; /* Make sure the background is transparent */
+    transition: background-color  0.3s ease; /* Smooth hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #333;
+}
+@media screen and (max-width:  930px) {
+    body {
+        padding-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+    h1 {
+        margin-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+}
+    </style>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul id="menuBar">
+                    <li><a href="https://www.savi-scanneronline.com/interface.html">Home</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/about.html">About</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/documentation.html">Documentation</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/creators.html">Creators</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>How to use Scanner</h1>
+    <div id="definitionsBox">
+        <p> If you are confused on what you see on the scanner, here are some helpful definitions to explain what everything is and what they do:
+            <ol>
+                <li>SQL Attack: This type of attack is where an attacker inserts malicious SQL code into an input field, allowing them to manipulate the database and gain unauthorized access to sensitive information without authorization. </li>
+                <li>XSS Attack: Also known as cross-site scripting, this is where malicious scripts are injected into trusted websites, causing them to execute the scripts in the victim's browser, potentially leading to unauthorized access to sensitive information. </li>
+		<li>CSRF Attack: an attack that forces authenticated users to submit a malicious request to a Web application. In other words, it forces authenticated users to send dangerous requests to websites against the user's will.</li>
+                <li>Level (1 - 5): This respresents how thorough the sql scan tests should be, the higher the level the more types of tests are performed.</li>
+                <li>Risk (1 - 3): This represents how aggressive the scanner is, the higher the risk the more aggressive the scanner is.</li>
+                <li>Forms: These allow users to enter data, which can then be sent to a server for processing; they are typically used to capture user input for various purposes, such as user registration, login, contact forms, survey forms and etc.</li>
+                <li>Crawl: Also know as a spider, this process involved starting from a particular webpage, discovering new pages linked to it, adding those links to a queue, and repeating this process until all reachable pages have been crawled</li>
+            </ol>
+        </p>
+    </div>
+
+    <div id = "Sources">
+        <h2>Sources</h2>
+           <ul>
+                <li>https://pentest-tools.com/blog/sql-injection-attacks</li>
+                <li>https://owasp.org/www-community/attacks/xss/</li>
+                <li>https://research.aimultiple.com/web-crawler/</li>
+                <li>https://www.freecodecamp.org/news/security-for-the-front-end-developer/</li>
+           </ul>
+    </div>
+</body>
+</html>

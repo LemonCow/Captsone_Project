@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <style>
+        header {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            font-size: 2em;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            box-shadow:  0  2px  4px rgba(0,  0,  0,  0.1); /* Shadow for depth *//
+        }
+    
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+        }
+    
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+
+        }
+        #definitionsBox {
+            display: flex;
+            background-color: #f3f3f3;
+            border: solid 2px #333;
+            padding: 20px;
+            margin: 20px;
+            width: 80%;
+            overflow: auto;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: large;
+            
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #b8a468; /* Use a more muted background color */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+
+        }
+
+        .navbar {
+    width:  100%;
+    background-color: #452f69; /* Set the background color here */
+    position: fixed; /* Optional: Use this if you want the navbar to stay at the top */
+    top:  0;
+    left:  0;
+    z-index:  2;
+}
+
+.navbar ul {
+    padding:  0;
+    margin:  0;
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline-block; /* Display list items horizontally */
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding:  14px  16px;
+    text-decoration: none;
+    background-color: transparent; /* Make sure the background is transparent */
+    transition: background-color  0.3s ease; /* Smooth hover effect */
+}
+
+.navbar li a:hover {
+    background-color: #333;
+}
+@media screen and (max-width:  930px) {
+    body {
+        padding-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+    h1 {
+        margin-top:   60px; /* Adjust this value based on the height of your navbar */
+    }
+}
+    </style>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul id="menuBar">
+                    <li><a href="https://www.savi-scanneronline.com/interface.html">Home</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/about.html">About</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/documentation.html">Documentation</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/creators.html">Creators</a></li>
+                    <li><a href="https://www.savi-scanneronline.com/feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>What is this?</h1>
+    <div id="definitionsBox">
+        <p> This is a vulnerability scanner that will check your website for vulnerabilites that hackers can use to break in and steal unauthorized data.
+            Other vulnerability scanners can be pretty complex and complicated to understand to develops who don't have knowledge in cybersecurity.
+            Our scanner will limit that complexity and complicateness as our scanner is straightfoward and easy to use and understand.
+        </p>
+    </div>
+
+        <h2>Additional Information</h2>
+           <p>Links to source codes and other additional resources and information will go here</p>
+
+    </div>
+</body>
+</html>

